@@ -8,6 +8,15 @@ async function singIn(req, res){
     }
 }
 
+async function getDataUser(req, res){
+    try {
+        res.json({data: await authService.getDataUser(req.params.uid)});
+    } catch (error) {
+        console.log(error)
+    }
+}
+
 module.exports = {
-    singIn
+    singIn,
+    getDataUser
 }

@@ -7,6 +7,7 @@ const controllerUsers = require("../controllers/users.controller");
 
 router.post("/auth/singIn", controllerAuth.singIn);
 
+router.get("/getDataUser/:uid", controllerAuth.getDataUser);
 
 router.post("/users/getByFIO", controllerUsers.getUsers);
 

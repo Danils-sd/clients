@@ -26,6 +26,20 @@ async function singIn(login, password){
     }
 }
 
+async function getDataUser(uid){
+    try {
+        const user = await data.collection("users").doc(uid).get();
+        return {
+            fullName: user.data().fullName,
+            login: user.data().login,
+        }
+    } catch (error) {
+        console.log(error);
+        return 400;
+    }
+}
+
 module.exports = {
-    singIn
+    singIn,
+    getDataUser
 }
