@@ -2,6 +2,7 @@
     width: 100%;
     display: flex;
     flex-direction: column;
+    align-items: center;
 }
 
 .main-userBlock{
@@ -45,4 +46,18 @@
     background-color: #444444;
 }
 
-.main-content{}
+.main-content{
+    margin-top: 50px;
+    width: 80%;
+    display: grid;
+    grid-template-columns: repeat(2, 0fr);
+    column-gap: 190px;
+    row-gap: 80px;
+}
+
+.main-content-block{
+    margin-top: 50px;
+    width: 90%;
+    display: grid;
+    grid-template-columns: repeat(2, 0fr);
+}

@@ -2,7 +2,7 @@ const usersService = require("../services/users.service");
 
 async function getUsers(req, res){
     try {
-        res.json({data: await usersService.getUsers(req.body.FIO)});
+        res.json({data: await usersService.getUsers(req.body.uid)});
     } catch (error) {
         console.log(error);
     }

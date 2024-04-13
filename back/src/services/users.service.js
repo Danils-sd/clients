@@ -1,7 +1,9 @@
 const data = require("../configs/admin.config");
 
-async function getUsers(FIO){
+async function getUsers(uid){
     try {
+        const user = await data.collection("users").doc(uid).get();
+        const FIO = user.data().fullName;
         const docRef = await data.collection("clients").where("FIO", "==", FIO).get();
         const users = [];
         docRef.forEach(e => {
@@ -10,7 +12,7 @@ async function getUsers(FIO){
                 check: e.data().check,
                 fName: e.data().fName,
                 sName: e.data().sName,
-                tHame: e.data().tHame,
+                tName: e.data().tName,
                 date: e.data().date,
                 INN: e.data().INN,
                 status: e.data().status
